@@ -1,19 +1,30 @@
-import React from "react";
-
-type RatingPropsType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
-}
+import React, {useState} from "react";
 
 
-export function Rating(props: RatingPropsType) {
+export function Rating() {
+
+    const [star, setStar] = useState(0)
+
+    const onClickHandler = (props: number) => () => setStar(props)
+
 
     return (
         <div>
-            <Star selected={props.value > 0}/>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
+            <span onClick={onClickHandler(1)}>
+                <Star selected={star > 0}/>
+            </span>
+            <span onClick={onClickHandler(2)}>
+                <Star selected={star > 1}/>
+            </span>
+            <span onClick={onClickHandler(3)}>
+                <Star selected={star > 2}/>
+            </span>
+            <span onClick={onClickHandler(4)}>
+                <Star selected={star > 3}/>
+            </span>
+            <span onClick={onClickHandler(5)}>
+                <Star selected={star > 4}/>
+            </span>
         </div>
     )
 
@@ -24,13 +35,10 @@ type StarPropsType = {
 }
 
 
-
 function Star(props: StarPropsType) {
-    debugger
-    console.log("Star")
-    if (props.selected === true) {
-        return <span><b>star </b></span>
-    } else {
-        return <span> star </span>
-    }
+    return (
+        props.selected
+            ? (<span><b> star </b></span>)
+            : (<span> star </span>)
+    )
 }

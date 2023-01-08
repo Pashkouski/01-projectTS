@@ -7,32 +7,32 @@ import {OnOffButton} from "./components/OnOff/OnOff";
 
 function App() {
 
-const [OnOff, setOnOff] = useState(false)
-
-
     return (
         <div>
-            {/*<input/>*/}
-            {/*<input checked={true} value='test' type="password"/>*/}
+            <input/>
+            <input checked={true} value='test' type="password"/>
 
-            {/*<PageTitle title={"This is APP component"}/>*/}
-            {/*<PageTitle title={"My friends"}/>*/}
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
 
-            {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
-            {/*<Accordion titleValue={'lorem'} collapsed={true}/>*/}
+            <Accordion titleValue={"Menu"}/>
+            <Accordion titleValue={'lorem'}/>
+
+            <Rating />
+            <Rating />
+            <Rating />
+            <Rating />
+            <Rating />
 
 
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
-
-            <OnOffButton on={OnOff}
-                         setOnOff={setOnOff}
-            />
-
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <OnOffButton/>
         </div>
     );
 }
